@@ -40,14 +40,14 @@ After launching, the roboRIO Imaging Tool will scan for available roboRIOs and i
 
 - **Edit Startup Settings** - This option is used when you want to configure the startup settings of the roboRIO (the settings in the right pane), without imaging the roboRIO.
 - **Format Target** - This option is used when you want to load a new image on the roboRIO (or reflash the existing image). This is the most common option.
-- **Update Firmware** - This option is used to update the roboRIO firmware. For this season, the imaging tool will require roboRIO firmware to be version 5.0 or greater.
+- **Update Firmware** - This option is used to update the roboRIO firmware. For this season, the imaging tool will require roboRIO firmware to be version 6.0 or greater.
 
 Updating Firmware
 ~~~~~~~~~~~~~~~~~
 
 .. image:: images/imaging-your-roborio/updating-firmware.png
 
-roboRIO firmware must be at least v5.0 to work with the 2019 image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
+roboRIO firmware must be at least v6.0 to work with the 2020 image. If your roboRIO is at least version 6.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
 To update roboRIO firmware:
 
