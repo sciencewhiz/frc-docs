@@ -12,7 +12,7 @@ This article contains instructions/links to components you will want to gather i
 Documentation
 -------------
 
-This documentation can be downloaded for offline viewing. The link to download the PDF can be found `here <https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf>`__.
+This documentation can be downloaded for offline viewing. The link to download the PDF can be found `here <https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf2>`__.
 
 Installers
 ----------
