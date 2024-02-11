@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -37,7 +37,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -70,7 +70,7 @@ jobs:
         path: frc-docs
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -97,7 +97,7 @@ jobs:
         uses: tj-actions/changed-files@v41
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: 3.12
       - name: Install Dependencies
         run: pip install -r source/requirements.txt
       - name: Run linkcheck on .rst files
@@ -121,7 +121,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -135,7 +135,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -162,7 +162,7 @@ jobs:
         git fetch origin main --depth=1
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -179,7 +179,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.12
     - name: Install Python Dependencies
       run: |
         pip install -r source/requirements.txt
