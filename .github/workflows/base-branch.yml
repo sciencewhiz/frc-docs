@@ -10,7 +10,7 @@ jobs:
   check-base-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: wpilibsuite/check-base-branch-action@v1.1
+      - uses: sciencewhiz/check-base-branch-action@Node20
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           protected-branches: stable
