@@ -230,4 +230,4 @@ WPILib is designed to install to different folders for different years, so that 
 
 ## Troubleshooting
 
-In case the installer fails, please open an issue on the installer repository. A link is available [here](https://github.com/wpilibsuite/wpilibinstaller-avalonia). The installer should give a message on the cause of the error, please include this in the description of your issue.
+In case the installer fails, please open an issue on the installer repository. A link is available [here](https://github.com/wpilibsuite/wpilibinstalleravalonia). The installer should give a message on the cause of the error, please include this in the description of your issue.
