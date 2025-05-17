@@ -67,6 +67,8 @@ class RemoteLiteralIncludeReader(object):
             url, headers={"User-Agent": "sphinxext-remoteliteralinclude"}
         )
         text = response.text
+        if response.status_code >= 400:
+            print(text.headers) # prints the entire header as a dictionary
         response.raise_for_status()
 
         if text:
