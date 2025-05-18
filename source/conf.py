@@ -211,8 +211,8 @@ hoverxref_mathjax = True
 # Use MathJax3 for better page loading times
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
-remoteliteralinclude_retries = 5
-remoteliteralinclude_retry_time = 62
+remoteliteralinclude_retries = 10
+remoteliteralinclude_retry_time = 15
 
 
 # -- Options for HTML output -------------------------------------------------
