@@ -62,8 +62,12 @@ class RemoteLiteralIncludeReader(object):
 
     def read_file(self, url, location=None):
         # type: (unicode, Any) -> List[unicode]
-        max_retry_time = self.options.get("max_retry_time", self.config.remoteliteralinclude_max_retry_time)
-        base_retry_time = self.options.get("retry_time", self.config.remoteliteralinclude_retry_time)
+        max_retry_time = self.options.get(
+            "max_retry_time", self.config.remoteliteralinclude_max_retry_time
+        )
+        base_retry_time = self.options.get(
+            "retry_time", self.config.remoteliteralinclude_retry_time
+        )
 
         total_time = 0  # Track total retry time
         attempt = 0
@@ -74,7 +78,7 @@ class RemoteLiteralIncludeReader(object):
             )
 
             if response.status_code in [408, 429, 500, 502, 503, 504]:
-                retry_time = base_retry_time * (2 ** attempt)  # Exponential backoff
+                retry_time = base_retry_time * (2**attempt)  # Exponential backoff
                 if total_time + retry_time < max_retry_time:
                     print(
                         f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}..."
@@ -98,9 +102,13 @@ class RemoteLiteralIncludeReader(object):
 
                 return text.splitlines(True)
             else:
-                raise IOError(__("Include file %r not found or reading it failed") % url)
+                raise IOError(
+                    __("Include file %r not found or reading it failed") % url
+                )
 
-        print(f"Max retry time of {max_retry_time} reached. Status code: {response.status_code} for url: {url}")
+        print(
+            f"Max retry time of {max_retry_time} reached. Status code: {response.status_code} for url: {url}"
+        )
         response.raise_for_status()
 
     def read(self, location=None):
@@ -370,7 +378,7 @@ def setup(app):
     directives.register_directive("remoteliteralinclude", RemoteLiteralInclude)
 
     app.add_config_value("remoteliteralinclude_max_retry_time", 180.0, "env")
-    app.add_config_value("remoteliteralinclude_retry_time", 1.0 , "env")
+    app.add_config_value("remoteliteralinclude_retry_time", 1.0, "env")
 
     return {
         "parallel_read_safe": True,
