@@ -74,9 +74,9 @@ class RemoteLiteralIncludeReader(object):
 
             if response.status_code in [403, 408, 429, 500, 502, 503, 504]:
                 if attempt < retries - 1:
-                    retry_time = base_retry_time * (2 ** attempt)  # Exponential backoff
+                    retry_time = base_retry_time * (2**attempt)  # Exponential backoff
                     print(
-                        f"Received status code {response.status_code}. Retrying in {retry_time * (attempt + 1)} seconds for url: {url}"
+                        f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}"
                     )
                     time.sleep(retry_time * (attempt + 1))
                     continue
@@ -366,7 +366,7 @@ def setup(app):
     directives.register_directive("remoteliteralinclude", RemoteLiteralInclude)
 
     app.add_config_value("remoteliteralinclude_retries", 3, "env")
-    app.add_config_value("remoteliteralinclude_retry_time", 60, "env")
+    app.add_config_value("remoteliteralinclude_retry_time", 60.0, "env")
 
     return {
         "parallel_read_safe": True,

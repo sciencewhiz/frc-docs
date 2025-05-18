@@ -212,7 +212,7 @@ hoverxref_mathjax = True
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 remoteliteralinclude_retries = 12
-remoteliteralinclude_retry_time = .1
+remoteliteralinclude_retry_time = 0.1
 
 
 # -- Options for HTML output -------------------------------------------------
