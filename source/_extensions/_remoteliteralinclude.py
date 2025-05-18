@@ -75,7 +75,7 @@ class RemoteLiteralIncludeReader(object):
             if response.status_code in [403, 408, 429, 500, 502, 503, 504]:
                 if attempt < retries - 1:
                     print(
-                        f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}..."
+                        f"Received status code {response.status_code}. Retrying in {retry_time * (attempt + 1)} seconds for url: {url}"
                     )
                     time.sleep(retry_time * (attempt + 1))
                     continue
