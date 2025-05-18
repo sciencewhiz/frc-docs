@@ -63,7 +63,7 @@ class RemoteLiteralIncludeReader(object):
     def read_file(self, url, location=None):
         # type: (unicode, Any) -> List[unicode]
         retries = self.options.get("retries", self.config.remoteliteralinclude_retries)
-        retry_time = self.options.get(
+        base_retry_time = self.options.get(
             "retry_time", self.config.remoteliteralinclude_retry_time
         )
 
@@ -74,6 +74,7 @@ class RemoteLiteralIncludeReader(object):
 
             if response.status_code in [403, 408, 429, 500, 502, 503, 504]:
                 if attempt < retries - 1:
+                    retry_time = base_retry_time * (2 ** attempt)  # Exponential backoff
                     print(
                         f"Received status code {response.status_code}. Retrying in {retry_time * (attempt + 1)} seconds for url: {url}"
                     )
