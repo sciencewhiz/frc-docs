@@ -1,8 +1,5 @@
-import codecs
 import time
 import requests
-import sys
-import warnings
 
 from difflib import unified_diff
 
