@@ -48,6 +48,7 @@ class RemoteLiteralIncludeReader(object):
         self.options = options
         self.encoding = options.get("encoding", config.source_encoding)
         self.lineno_start = self.options.get("lineno-start", 1)
+        self.config = config
 
         self.parse_options()
 
@@ -62,7 +63,9 @@ class RemoteLiteralIncludeReader(object):
     def read_file(self, url, location=None):
         # type: (unicode, Any) -> List[unicode]
         retries = self.options.get("retries", self.config.remoteliteralinclude_retries)
-        retry_time = self.options.get("retry_time", self.config.remoteliteralinclude_retry_time)
+        retry_time = self.options.get(
+            "retry_time", self.config.remoteliteralinclude_retry_time
+        )
 
         for attempt in range(retries):
             response = requests.get(
@@ -71,11 +74,15 @@ class RemoteLiteralIncludeReader(object):
 
             if response.status_code in [403, 408, 429, 500, 502, 503, 504]:
                 if attempt < retries - 1:
-                    print(f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}...")
+                    print(
+                        f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}..."
+                    )
                     time.sleep(retry_time * (attempt + 1))
                     continue
                 else:
-                    print(f"Max retries reached. Status code: {response.status_code} for url: {url}")
+                    print(
+                        f"Max retries reached. Status code: {response.status_code} for url: {url}"
+                    )
                     response.raise_for_status()
 
             response.raise_for_status()
