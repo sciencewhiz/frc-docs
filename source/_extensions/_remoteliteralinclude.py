@@ -62,27 +62,30 @@ class RemoteLiteralIncludeReader(object):
 
     def read_file(self, url, location=None):
         # type: (unicode, Any) -> List[unicode]
-        retries = self.options.get("retries", self.config.remoteliteralinclude_retries)
-        base_retry_time = self.options.get(
-            "retry_time", self.config.remoteliteralinclude_retry_time
-        )
+        max_retry_time = self.options.get("max_retry_time", self.config.remoteliteralinclude_max_retry_time)
+        base_retry_time = self.options.get("retry_time", self.config.remoteliteralinclude_retry_time)
 
-        for attempt in range(retries):
+        total_time = 0  # Track total retry time
+        attempt = 0
+
+        while total_time < max_retry_time:
             response = requests.get(
                 url, headers={"User-Agent": "sphinxext-remoteliteralinclude"}
             )
 
-            if response.status_code in [403, 408, 429, 500, 502, 503, 504]:
-                if attempt < retries - 1:
-                    retry_time = base_retry_time * (2**attempt)  # Exponential backoff
+            if response.status_code in [408, 429, 500, 502, 503, 504]:
+                retry_time = base_retry_time * (2 ** attempt)  # Exponential backoff
+                if total_time + retry_time < max_retry_time:
                     print(
-                        f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}"
+                        f"Received status code {response.status_code}. Retrying in {retry_time} seconds for url: {url}..."
                     )
-                    time.sleep(retry_time * (attempt + 1))
+                    time.sleep(retry_time)
+                    total_time += retry_time
+                    attempt += 1
                     continue
                 else:
                     print(
-                        f"Max retries reached. Status code: {response.status_code} for url: {url}"
+                        f"Max retry time of {max_retry_time} reached. Status code: {response.status_code} for url: {url}"
                     )
                     response.raise_for_status()
 
@@ -95,9 +98,10 @@ class RemoteLiteralIncludeReader(object):
 
                 return text.splitlines(True)
             else:
-                return []
+                raise IOError(__("Include file %r not found or reading it failed") % url)
 
-        return []
+        print(f"Max retry time of {max_retry_time} reached. Status code: {response.status_code} for url: {url}")
+        response.raise_for_status()
 
     def read(self, location=None):
         # type: (Any) -> Tuple[unicode, int]
@@ -365,8 +369,8 @@ def setup(app):
     directives.register_directive("rli", RemoteLiteralInclude)
     directives.register_directive("remoteliteralinclude", RemoteLiteralInclude)
 
-    app.add_config_value("remoteliteralinclude_retries", 3, "env")
-    app.add_config_value("remoteliteralinclude_retry_time", 60.0, "env")
+    app.add_config_value("remoteliteralinclude_max_retry_time", 180.0, "env")
+    app.add_config_value("remoteliteralinclude_retry_time", 1.0 , "env")
 
     return {
         "parallel_read_safe": True,
