@@ -1820,23 +1820,21 @@ doc = ["jupyterlite-pyodide-kernel", "jupyterlite-sphinx (>=0.12.0)", "jupytext"
 test = ["array-api-strict", "asv", "gmpy2", "hypothesis (>=6.30)", "mpmath", "pooch", "pytest", "pytest-cov", "pytest-timeout", "pytest-xdist", "scikit-umfpack", "threadpoolctl"]
 
 [[package]]
-name = "scipy-openblas32"
+name = "scipy-openblas64"
 version = "0.3.28.0.2"
 description = "Provides OpenBLAS for python packaging"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:233f449a842a754a5154af399a6b4ea6ffb27457883339a6b324b1fc3e55cad8"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:cb97169552004960ad6758d0c65998dbcd23bb4908e321381d288ed6c019280e"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b10b433d4c48c74ea1a3b88dae31447a1bae5597d04577a531fbc16f2bdcf84b"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:875f981d5024833775322ef2aae4aa0545283e856503326812e9dc1aeafaef14"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6f0ecb748ce7dc7996220614100d7bf87fa0aab9499bbbdabbdcb6f5487a9e65"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-musllinux_1_1_aarch64.whl", hash = "sha256:c4b6cf0067a6c62ef4b998a4cf59694cd1e13a7bf994346bc5dcddbf3e7a2a80"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:a0597896ac1e0973b3da6ea15e03f2189ded49780d6571773698842072e66eb2"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:35051f9ee933ec642caafc1101b79a760bd536597e486e0168a7700afec256b0"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:ea226ce2ffd8a5bfc020aa8d80e1013c758a8032e87588681b04cd25d1b1fd48"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-win32.whl", hash = "sha256:e6595e950df5584fe9fdf5f483b321432e14c7792d61f0cf3d6bf2bc4d2c39be"},
-    {file = "scipy_openblas32-0.3.28.0.2-py3-none-win_amd64.whl", hash = "sha256:7a6c0618760084278eeda0ea0d1d7ca77eebbc4fce9f0a0b4fef82000e5ec01b"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:39ab094bbdb66efdad47bcf211b69927ad21e6c4c5efa32a53569dcd9011550c"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:7ed67b6d6bcc3fe6c9c6089e8e30ba275a17e1547217cb3fe2450c038daa451a"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:643abc14ae5c820f44478031adf528a675c3fdac80c556c4e5e72eed6b34cca8"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:146d5730f7c6cd7670349d6ac1bd2636d8d51cc9efd388c37c9c4ef7ea02c70d"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-musllinux_1_1_aarch64.whl", hash = "sha256:eab6043a08e6a71b72fd8757a94b87348f7c91ebb02c7fc7d53db76aba9d25d1"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:bb5dcab6ecdb4da885e55445f10fbf06b4d2e74b54c76c092fc48e71a8e2a886"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:2a7eca4d4582ca5f04e8a68a472c9bafc7eb9dacea1fb486776b4243ae9346c4"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:53aa2d71cc020db251a6e5b5b80d03d9baaec1069430b2e0f6dead82b05e00f0"},
+    {file = "scipy_openblas64-0.3.28.0.2-py3-none-win_amd64.whl", hash = "sha256:fdcd2806c4b0f8c8dfca539c8a6671e15cb51a94b05c8aca322d53ba6ec12dba"},
 ]
 
 [[package]]
@@ -2720,4 +2718,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.14"
-content-hash = "da390fc8af98d88ad590cf8511fbab55fbf7d90d4533e3320c5f67423342f116"
+content-hash = "8cd2efdee558c0d15717771671a8a65439bf2e55d4a913aff18033ec397101f2"
