@@ -70,7 +70,7 @@ jobs:
           # Make sure we still have the .github directory
           git restore .github
 
-      # Run Inspector
+      # Run Inspector 1.11
       - name: Inspect RLIs
         uses: docker://ghcr.io/starlight220/inspector:v1.11
         id: inspector
