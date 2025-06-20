@@ -43,7 +43,7 @@ When oversampling is enabled, the FPGA will add multiple consecutive samples tog
       :language: java
       :lines: 25-28
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 15-19
 
@@ -57,7 +57,7 @@ Averaging behaves much like oversampling, except the accumulated values are divi
       :language: java
       :lines: 30-32
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 21-23
 
@@ -77,7 +77,7 @@ The :code:`getValue` method returns the raw instantaneous measured value from th
       :language: java
       :lines: 37-40
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 25-28
 
@@ -91,7 +91,7 @@ The :code:`getVoltage` method returns the instantaneous measured voltage from th
       :language: java
       :lines: 42-44
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 30-32
 
@@ -105,7 +105,7 @@ The :code:`getAverageValue` method returns the averaged value from the analog in
       :language: java
       :lines: 46-48
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 34-36
 
@@ -119,7 +119,7 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
       :language: java
       :lines: 46-48
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 38-40
 
