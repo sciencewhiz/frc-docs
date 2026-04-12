@@ -112,7 +112,7 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
    :lines: 50-60
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/8a658b071c5ca6001ea6c2e743c69f47b01f3612/GettingStarted/robot.py
    :language: python
    :lines: 12-29
    :lineno-match:
