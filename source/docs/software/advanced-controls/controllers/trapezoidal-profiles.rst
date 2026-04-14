@@ -158,7 +158,7 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
 .. note:: In this example, the initial state is re-computed every timestep. This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 
-A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorTrapezoidProfile)):
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/mostrobotpy/tree/2027/examples/robot/ElevatorTrapezoidProfile)):
 
 .. tab-set-code::
 
@@ -172,7 +172,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/ElevatorTrapezoidProfile/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ElevatorTrapezoidProfile/robot.py
     :language: python
     :lines: 8-
     :lineno-match:
