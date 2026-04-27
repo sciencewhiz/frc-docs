@@ -15,9 +15,9 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
       :lines: 43-46
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 58-61
+      :lines: 57-60
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
@@ -38,7 +38,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 62-68
+      :lines: 61-67
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
@@ -50,12 +50,12 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
-      :lines: 55-56
+      :lines: 54-55
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
       :lines: 35-36
       :lineno-match:
@@ -69,14 +69,14 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
-      :lines: 59-64
+      :lines: 58-63
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 39-44
+      :lines: 39-43
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
