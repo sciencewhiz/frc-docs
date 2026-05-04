@@ -32,7 +32,7 @@ All classes listed here are supported by the Romi Robot. If a class is not liste
 - ``Servo``
 - ``BuiltInAccelerometer``
 
-The following classes are provided by the [Romi Vendordep](https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json).
+The following classes are provided by the [Romi Vendordep](https://raw.githubusercontent.com/wpilibsuite/allwpilib/refs/tags/v2026.2.1/romiVendordep/RomiVendordep.json).
 
 - ``RomiGyro``
 - ``RomiMotor``
