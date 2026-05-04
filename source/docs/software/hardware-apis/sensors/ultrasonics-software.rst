@@ -57,7 +57,7 @@ Other ultrasonic sensors offered by third-parties may use more complicated commu
 
 ## Using ultrasonics in code
 
-Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID)) will move the robot to 1 meter away from the nearest object the sensor detects:
+Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2026.2.1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID)) will move the robot to 1 meter away from the nearest object the sensor detects:
 
 .. tab-set::
 

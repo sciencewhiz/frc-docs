@@ -13,7 +13,7 @@ Below is a list of instructions that guide you through cloning, building, publis
 * Clone the repository with ``git clone https://github.com/wpilibsuite/allwpilib.git``
 * Build the repository with ``./gradlew build`` or ``./gradlew build --build-cache`` if you have an internet connection
 * Publish the artifacts locally by running ``./gradlew publish``
-* [Update your robot project's](https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md) ``build.gradle`` [to use the artifacts](https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md)
+* [Update your robot project's](https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/DevelopmentBuilds.md) ``build.gradle`` [to use the artifacts](https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/DevelopmentBuilds.md)
 
 ## Core Repository
 .. toctree::
@@ -21,14 +21,14 @@ Below is a list of instructions that guide you through cloning, building, publis
 
    Overview <https://github.com/wpilibsuite/allwpilib>
    Styleguide & wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/README.md>
-   Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/main/README-CMAKE.md>
-   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md>
-   Maven Artifacts <https://github.com/wpilibsuite/allwpilib/blob/main/MavenArtifacts.md>
-   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/main/CONTRIBUTING.md>
+   Building with CMake <https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/README-CMAKE.md>
+   Using Development Builds <https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/DevelopmentBuilds.md>
+   Maven Artifacts <https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/MavenArtifacts.md>
+   Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/CONTRIBUTING.md>
 
 ## NetworkTables
 
 .. toctree::
    :maxdepth: 1
 
-   NetworkTables 4 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables4.adoc>
+   NetworkTables 4 Protocol Spec <https://github.com/wpilibsuite/allwpilib/blob/v2026.2.1/ntcore/doc/networktables4.adoc>
