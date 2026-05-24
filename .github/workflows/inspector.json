@@ -27,7 +27,6 @@
     }
   ],
   "ignoredFiles": [
-    "source/docs/software/commandbased/commands-v2/command-scheduler.rst",
     "source/docs/software/hardware-apis/pneumatics/pressure.rst",
     "source/docs/software/hardware-apis/pneumatics/solenoids.rst",
     "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst",
