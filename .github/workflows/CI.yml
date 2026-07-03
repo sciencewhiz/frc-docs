@@ -67,6 +67,8 @@ jobs:
         python-version: "3.13"
     - name: Install uv
       uses: astral-sh/setup-uv@v8.1.0
+    - name: Install rsvg-convert
+      run: choco install rsvg-convert -y
     - name: Build HTML
       run: |
         uv run ./make.bat html
