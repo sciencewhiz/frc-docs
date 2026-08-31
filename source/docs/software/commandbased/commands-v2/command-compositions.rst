@@ -172,7 +172,7 @@ The ``Select`` factory ([Java](https://github.wpilib.org/allwpilib/docs/beta/jav
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/snippets/selectcommand/RobotContainer.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/selectcommand/RobotContainer.java
          :language: java
          :lines: 20-45
          :lineno-match:
@@ -180,9 +180,9 @@ The ``Select`` factory ([Java](https://github.wpilib.org/allwpilib/docs/beta/jav
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/snippets/SelectCommand/include/RobotContainer.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/SelectCommand/include/RobotContainer.hpp
          :language: c++
-         :lines: 26-43
+         :lines: 26-44
          :lineno-match:
 
 The ``Either`` factory ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Commands.html#either(org.wpilib.command2.Command,org.wpilib.command2.Command,java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/namespacewpi_1_1cmd.html#a7f8ee92e990d9785d30349267a1446c2), :external:py:func:`Python <commands2.cmd.either>`), backed by the ``ConditionalCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/ConditionalCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_conditional_command.html), :external:py:class:`Python <commands2.ConditionalCommand>`), is a specialization accepting two commands and a boolean selector function.
@@ -291,14 +291,14 @@ For cases that don't need to track the proxied command, ``ScheduleCommand`` ([Ja
 
 ## Subclassing Compositions
 
-Command compositions can also be written as a constructor-only subclass of the most exterior composition type, passing the composition members to the superclass constructor. Consider the following from the Hatch Bot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)):
+Command compositions can also be written as a constructor-only subclass of the most exterior composition type, passing the composition members to the superclass constructor. Consider the following from the Hatch Bot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)):
 
 .. tab-set::
 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/ComplexAuto.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/ComplexAuto.java
          :language: java
          :lines: 5-
          :lineno-match:
@@ -306,7 +306,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.hpp
          :language: c++
          :lines: 5-
          :lineno-match:
@@ -314,7 +314,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
          :language: c++
          :lines: 5-
          :lineno-match:
