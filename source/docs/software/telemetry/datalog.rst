@@ -6,44 +6,44 @@ By default, no telemetry data is recorded (saved) on the robot. The ``DataLogMan
 
 Similar to NetworkTables, data logs have the concept of entries with string identifiers (keys) with a specified data type.  Unlike NetworkTables, the data type cannot be changed after the entry is created, and entries also have metadata--an arbitrary (but typically JSON) string that can be used to convey additional information about the entry such as the data source or data schema.  Also unlike NetworkTables, data log operation is unidirectional--the ``DataLog`` class can only write data logs (it does not support read-back of written values) and the ``DataLogReader`` class can only read data logs (it does not support changing values in the data log).
 
-Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the RoboRIO, the FPGA timestamp is used (the same timestamp returned by ``Timer.getFPGATimestamp()``).
+Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the Systemcore, the system timestamp is used (the same timestamp returned by ``RobotController.getTime()`` converted to microseconds).
 
 .. note:: For more information on the details of the data log file format, see the [WPILib Data Log File Format Specification](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-8/datalog/doc/datalog.adoc).
 
 ## Standard Data Logging using DataLogManager
 
-The ``DataLogManager`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/wpilib.core/org/wpilib/system/DataLogManager.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_data_log_manager.html), :external:py:class:`Python <wpilib.DataLogManager>`) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
+The ``DataLogManager`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/wpilib.core/org/wpilib/system/DataLogManager.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_data_log_manager.html), :external:py:class:`Python <wpilib.DataLogManager>`) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/systemcore/logs`` otherwise.
 
-.. note:: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work. Flash drives of 32GB or smaller are recommended, as Windows doesn't format drives larger then 32GB with FAT32.
+.. note:: USB flash drives need to be formatted as FAT32 or exFAT to work with the Systemcore.  NTFS formatted drives will not work.
 
-Log files are initially named ``WPILib_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``WPILib_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the :term:`FMS` is connected and provides a match number, the log file is renamed to ``WPILib_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
+  .. todo:: confirm that exfat works and NTFS doesn't work. If exfat doesn't work, add back 32 gb warning for flash drives
 
-On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 50 MB of free space on the target storage, ``WPILib_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
+Log files are initially named ``WPILIB_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``WPILIB_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the :term:`FMS` is connected and provides a match number, the log file is renamed to ``WPILIB_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
+
+On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 200 MB of free space on the target storage, ``WPILIB_`` log files are deleted (oldest to newest) until there is 400 MB free OR there are 10 files remaining.
 
 The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``Robot`` constructor). This will record all NetworkTables changes to the data log.
 
 .. tab-set-code::
 
-    ```java
-    import edu.wpi.first.wpilibj.DataLogManager;
-    // Starts recording to data log
-    DataLogManager.start();
-    ```
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-8/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/Robot.java
+      :lines: 11, 32-33
+      :language: java
 
-    ```c++
-    #include "wpi/system/DataLogManager.hpp"
-    // Starts recording to data log
-    wpi::DataLogManager::Start();
-    ```
 
-    ```python
-    from wpilib import DataLogManager
-    DataLogManager.start()
-    ```
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-8/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/Robot.cpp
+      :lines: 9, 12-13
+      :language: cpp
+
+
+   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/HatchbotInlined/robot.py
+      :lines: 11, 35-36
+      :language: python
+
 
 DataLogManager provides a convenience function (``DataLogManager.log()``) for logging of text messages to the ``messages`` entry in the data log. The message is also printed to standard output, so this can be a replacement for ``System.out.println()``.
 
-DataLogManager also records the current roboRIO system time (in UTC) to the data log every ~5 seconds to the ``systemTime`` entry in the data log.  This can be used to (roughly) synchronize the data log with other records such as DS logs or match video.
+DataLogManager also records the current Systemcore system time (in UTC) to the data log every ~5 seconds to the ``systemTime`` entry in the data log.  This can be used to (roughly) synchronize the data log with other records such as DS logs or match video.
 
 For custom logging, the managed ``DataLog`` can be accessed via ``DataLogManager.getLog()``.
 
@@ -53,37 +53,20 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
 
 .. tab-set-code::
 
-    ```java
-    import edu.wpi.first.wpilibj.DataLogManager;
-    import edu.wpi.first.wpilibj.DriverStation;
-    // Starts recording to data log
-    DataLogManager.start();
-    // Record both DS control and joystick data
-    DriverStation.startDataLog(DataLogManager.getLog());
-    // (alternatively) Record only DS control data
-    DriverStation.startDataLog(DataLogManager.getLog(), false);
-    ```
+     .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-8/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/Robot.java
+      :lines: 9, 11, 32-37
+      :language: java
 
-    ```c++
-    #include "wpi/system/DataLogManager.hpp"
-    #include "wpi/driverstation/DriverStation.hpp"
-    // Starts recording to data log
-    wpi::DataLogManager::Start();
-    // Record both DS control and joystick data
-    DriverStation::StartDataLog(DataLogManager::GetLog());
-    // (alternatively) Record only DS control data
-    DriverStation::StartDataLog(DataLogManager::GetLog(), false);
-    ```
 
-    ```python
-    from wpilib import DataLogManager, DriverStation
-    # Starts recording to data log
-    DataLogManager.start()
-    # Record both DS control and joystick data
-    DriverStation.start_data_log(DataLogManager.get_log())
-    # (alternatively) Record only DS control data
-    DriverStation.start_data_log(DataLogManager.get_log(), False)
-    ```
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-8/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/Robot.cpp
+      :lines: 8-9, 12-17
+      :language: cpp
+
+
+   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/HatchbotInlined/robot.py
+      :lines: 11, 35-40
+      :language: python
+
 
 ## Custom Data Logging using DataLog
 
@@ -92,6 +75,8 @@ The ``DataLog`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java
 .. note:: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
 The LogEntry classes can be used in conjunction with DataLogManager to record values only to a data log and not to NetworkTables:
+
+.. todo:: Change to RLIs when the snippets are available in the snippets repo. https://github.com/wpilibsuite/allwpilib/pull/9623
 
 .. tab-set-code::
 
